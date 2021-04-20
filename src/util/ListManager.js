@@ -9,6 +9,11 @@ const updateCurrentList = (list) => {
 }
 const updateCurrentCart = (list) => {
     AsyncStorage.setItem("@@GrocerList/currentCart", JSON.stringify(list))
+
+}
+
+const updateFavoriteItem = (list) => {
+    AsyncStorage.setItem('@@GroceryList/favoriteList', JSON.stringify(list))
 }
 
 
@@ -17,6 +22,8 @@ export const useCurrentList = () => {
     const [list, setList] = useState([])
     const [cart, setCart] = useState([])
     const [loading, setLoading] = useState(true)
+    const [isFavorite, setIsFavorite] = useState(false)
+
 
     const addItem = (text) => {
         const newList = [{ id: uuid(), name: text }, ...list]
@@ -36,6 +43,11 @@ export const useCurrentList = () => {
         const newCart = [item, ...cart]
         setCart(newCart)
         updateCurrentCart(newCart)
+    }
+
+    const favoriteItem = (item) => {
+       setIsFavorite(true);
+       updateFavoriteItem(true)
     }
 
     useEffect(() => {
@@ -67,7 +79,8 @@ export const useCurrentList = () => {
         addItem,
         removeItem,
         cart,
-        addToCart
+        addToCart,
+        favoriteItem 
 
     }
 

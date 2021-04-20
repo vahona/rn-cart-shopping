@@ -12,7 +12,8 @@ export default ({ navigation }) => {
         addItem,
         removeItem,
         addToCart,
-        cart
+        cart,
+        addTofavorite,
 
     } = useCurrentList()
 

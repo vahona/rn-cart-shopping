@@ -77,7 +77,7 @@ const LeftActions = (progress, dragX) => {
         <View style={styles.leftAction}>
             <Animated.Text style={[styles.actionText, { transform: [{ scale }] }]}>
                 Add to cart
-        </Animated.Text>
+            </Animated.Text>
         </View>
     )
 }
@@ -93,7 +93,7 @@ const RightActions = (progress, dragX) => {
         <View style={styles.rightAction}>
             <Animated.Text style={[styles.actionText, { transform: [{ scale }] }]}>
                 Delete
-        </Animated.Text>
+            </Animated.Text>
         </View>
     )
 }
